@@ -25,7 +25,6 @@ namespace Microsoft.PowerShell.EditorServices.CodeLenses
         /// </summary>
         private readonly IDocumentSymbolProvider _symbolProvider;
         private readonly SymbolsService _symbolsService;
-        private readonly WorkspaceService _workspaceService;
 
         public static string Id => nameof(ReferencesCodeLensProvider);
 
@@ -42,7 +41,6 @@ namespace Microsoft.PowerShell.EditorServices.CodeLenses
         /// <param name="symbolsService"></param>
         public ReferencesCodeLensProvider(WorkspaceService workspaceService, SymbolsService symbolsService)
         {
-            _workspaceService = workspaceService;
             _symbolsService = symbolsService;
             // TODO: Pull this from components
             _symbolProvider = new ScriptDocumentSymbolProvider();
